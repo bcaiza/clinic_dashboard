@@ -244,7 +244,7 @@ def update_dashboard(departments, admit_types, admit_sources, wait_range):
         name='Tiempo Promedio de Espera',
         marker=dict(
         color=admit_source_stats['Tiempo Promedio'],
-        colorscale='Plasma', 
+        colorscale='Viridis', 
         showscale=False),
         text=admit_source_stats['Tiempo Promedio'].round(1),
         textposition='outside',
