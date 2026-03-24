@@ -243,8 +243,8 @@ def update_dashboard(departments, admit_types, admit_sources, wait_range):
         y=admit_source_stats['Tiempo Promedio'],
         name='Tiempo Promedio de Espera',
         marker=dict(
-        color=admit_source_stats['Tiempo Promedio'], # Colorea según el valor (escala)
-        colorscale='Plasma', # Puedes usar 'Viridis', 'Plasma', 'Portland' o 'RdBu'
+        color=admit_source_stats['Tiempo Promedio'],
+        colorscale='Viridis', 
         showscale=False),
         text=admit_source_stats['Tiempo Promedio'].round(1),
         textposition='outside',
@@ -271,4 +271,4 @@ def update_dashboard(departments, admit_types, admit_sources, wait_range):
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8060)
+    app.run(debug=True, port=8050)
