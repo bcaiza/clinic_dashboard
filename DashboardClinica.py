@@ -242,7 +242,10 @@ def update_dashboard(departments, admit_types, admit_sources, wait_range):
         x=admit_source_stats['Admit Source'],
         y=admit_source_stats['Tiempo Promedio'],
         name='Tiempo Promedio de Espera',
-        marker_color='indianred',
+        marker=dict(
+        color=admit_source_stats['Tiempo Promedio'], # Colorea según el valor (escala)
+        colorscale='Plasma', # Puedes usar 'Viridis', 'Plasma', 'Portland' o 'RdBu'
+        showscale=False),
         text=admit_source_stats['Tiempo Promedio'].round(1),
         textposition='outside',
         hovertemplate='<b>%{x}</b><br>Tiempo Promedio: %{y:.1f} min<br>Total Casos: %{customdata}<extra></extra>',
@@ -253,7 +256,7 @@ def update_dashboard(departments, admit_types, admit_sources, wait_range):
         title='Tiempo Promedio de Espera por Fuente de Admisión',
         xaxis_title='Fuente de Admisión',
         yaxis_title='Tiempo Promedio de Espera (min)',
-        height=400,
+        height=800,
         xaxis_tickangle=-45,
         showlegend=False
     )
